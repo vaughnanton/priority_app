@@ -1,7 +1,8 @@
 var taskInput = document.getElementById("new-task"); //new task
-var addButton = document.getElementById("button")[0]; //first button
+var addButton = document.getElementsByTagName("button")[0]; //first button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed tasks
+console.log(addButton);
 
 //New Task List Item
 
@@ -30,7 +31,7 @@ editButton.className = "edit";
 deleteButton.innerText = "Delete";
 deleteButton.className = "delete";
 
-label.innerText = taskstring;
+label.innerText = taskString;
 
 // Each element needs appending
 listItem.appendChild(checkBox);
@@ -125,13 +126,13 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 }
 
 //cycle over incompleteTasksHolder ul list items
-for (var i = 0; i < incompleteTaskHolder.children.length; i++) [
+for (var i = 0; i < incompleteTasksHolder.children.length; i++) {
   //bind events to ilist item's children(taskCompleted)
   bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
-]
+}
 
 //cycle over completedTasksHolder ul list items
-for (var i = 0; i < completedTasksHolder.chidlren.length; i++) {
+for (var i = 0; i < completedTasksHolder.children.length; i++) {
   //bind events to list item's children (taskCompleted)
   bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
